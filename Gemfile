@@ -21,6 +21,14 @@ group :development do
   gem 'sqlite3'
   gem 'listen', '~> 3.1.5'
 end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'rails-controller-testing'
+  gem 'nyan-cat-formatter'
+  gem 'shoulda'
+  gem 'factory_bot_rails'
+end
  
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -37,3 +45,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
  
 gem 'thor', '0.20.0'
+
+# Use Bcrypt for encrypting passwords
+gem 'bcrypt'
+
+# Use ActiveModelSerializers to serialize data into JSON
+gem 'active_model_serializers', '~> 0.10.0'
