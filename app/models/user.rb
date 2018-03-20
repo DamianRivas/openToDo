@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   before_save { self.email = email.downcase if email.present? }
   
-  has_many :lists
-  has_many :items, through: :lists
+  has_many :lists, dependent: :destroy
+  has_many :items, through: :lists, dependent: :destroy
   
   validates :password, presence: true, length: { minimum: 6 }, if: -> { password_digest.nil? }
   validates :password, length: { minimum: 6 }, allow_blank: true
