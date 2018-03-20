@@ -4,6 +4,8 @@ RSpec.describe List, type: :model do
   let(:user) { create(:user) }
   let(:list) { create(:list, user: user) }
   
+  it { should validate_presence_of(:name) }
+  
   it { should belong_to(:user) }
   
   it { should have_many(:items) }
