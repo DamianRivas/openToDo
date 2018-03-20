@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       resources :items, only: [:create]
     end
     
+    resources :lists, only: [:update]
+    resources :items, only: [:update]
     resources :items, only: [:destroy]
   end
 end
